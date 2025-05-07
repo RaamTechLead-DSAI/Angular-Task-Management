@@ -1,9 +1,12 @@
+// Import Angular core and task model type
 import { Injectable } from "@angular/core";
 import { type NewTaskData } from "./task/task.model";
 
+// Mark this service as injectable and available app-wide
 @Injectable({providedIn: 'root'})
 export class TasksService {
-     private tasks = [
+    // Task list (initialized with default values)
+    private tasks = [
         {
           id: 't1',
           userId: 'u1',
@@ -27,6 +30,7 @@ export class TasksService {
         },
       ];
 
+      // Load tasks from localStorage on initialization
       constructor() {
         const tasks = localStorage.getItem('tasks');
 
@@ -35,10 +39,12 @@ export class TasksService {
         }
       }
 
+      // Get all tasks for a specific user
       getUserTasks(userId: string){
         return this.tasks.filter((task) => task.userId === userId);
       }
 
+      // Add a new task to the list
       addTask(taskData: NewTaskData, userId: string) {
         this.tasks.unshift({
             id: new Date().getTime().toString(),
@@ -50,11 +56,13 @@ export class TasksService {
           this.saveTasks();
       }
 
+      // Remove a task by ID
       removeTask(id: string) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
         this.saveTasks();
       }
 
+      // Save the current task list to localStorage
       private saveTasks() {
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
       }

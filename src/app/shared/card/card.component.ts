@@ -1,5 +1,7 @@
+// Import Angular core
 import { Component } from '@angular/core';
 
+// Define the CardComponent, used for wrapping content in a styled card
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -7,6 +9,4 @@ import { Component } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent {
-
-}
+export class CardComponent {}

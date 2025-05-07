@@ -1,17 +1,22 @@
+<!-- Render the header component -->
 <app-header />
 
 <main>
+     <!-- Display the list of users -->
     <ul id="users">
         @for (user of users; track user.id) {
             <li>
+                 <!-- Render each user with selection handling -->
                 <app-user [user]="user" [selected]="user.id === selectedUserId" (select)="onSelectUser($event)" />
             </li>
         }
      </ul>
 
+    <!-- Conditionally show tasks if a user is selected --> 
     @if (selectedUser)  {
         <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"/>
     } @else {
+        <!-- Fallback message when no user is selected -->
         <p id="fallback"> Select a user to view their tasks!</p>
     }
 </main>

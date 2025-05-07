@@ -1,16 +1,20 @@
+<!-- Conditionally render the task creation form -->
 @if (isAddingTask) {
     <app-new-task [userId]="userId" (close)="onCloseAddTask()" />
 }
  
 <section id="tasks">
     <header>
+        <!-- Display the selected user's name -->
         <h2>{{ name }}'s Tasks </h2>
         <menu>
+            <!-- Button to start adding a new task -->
             <button (click)="onStartAddTask()"> Add Task</button>
         </menu>
     </header>
 
     <ul>
+        <!-- Loop through and render user's tasks -->
         @for (task of selectedUserTasks; track task.id) {
             <li>
                 <app-task [task]="task" />

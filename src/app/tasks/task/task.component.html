@@ -1,8 +1,16 @@
+<!-- Wrap task details inside a reusable card component -->
 <app-card>
     <article>
+        <!-- Display task title -->
         <h2>{{ task.title }}</h2>
+
+        <!-- Display formatted due date -->
         <time>{{ task.dueDate | date:'fullDate'}}</time>
+
+        <!-- Display task summary -->
         <p>{{ task.summary }}</p>
+
+        <!-- Button to complete (remove) the task -->
         <p class="actions">
             <button (click)="onCompleteTask()">Complete</button>
         </p>

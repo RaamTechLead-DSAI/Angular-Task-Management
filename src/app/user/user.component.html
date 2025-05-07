@@ -1,9 +1,13 @@
+<!-- Use CardComponent to wrap user details in a styled card -->
 <app-card>
+    <!-- Button to select a user, conditionally styled based on selection state -->
     <button [class.active]="selected" (click)="onSelectUser()" >
+        <!-- Display user avatar image -->
         <img
             [src] = "imagePath"
             [alt] = "user.name"
         />
+        <!-- Display user name -->
         <span>{{ user.name }}</span>
     </button>
 </app-card>
