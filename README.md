@@ -1,27 +1,56 @@
-# Essentials
+# Task Management Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+This is a task management application built with Angular. The app allows users to view and manage their tasks in a user-friendly interface.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **View tasks**: Select a user to view their tasks.
+- **Add new tasks**: Add tasks with a title, summary, and due date.
+- **Complete tasks**: Mark tasks as completed (removes them from the list).
+- **Clean UI**: The app uses reusable card components for displaying user and task information.
 
-## Code scaffolding
+## Project Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Components:
+- **AppComponent**: The root component that manages user selection and displays their tasks.
+- **UserComponent**: Displays user details and allows selection.
+- **TaskComponent**: Displays an individual task and allows marking it as completed.
+- **NewTaskComponent**: A form for adding new tasks.
+- **CardComponent**: A reusable component for displaying content in a card layout.
+  
+### Services:
+- **TasksService**: Manages task-related operations like adding, removing, and fetching tasks.
+  
+### Models:
+- **Task**: Defines the structure of a task.
+- **User**: Defines the structure of a user.
 
-## Build
+## Naviagte to Application
+http://localhost:4200/ in your browser to view the app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
+- Select a User: Click on a user to view their tasks.
+- View Tasks: Tasks for the selected user will be displayed. You can see the task's title, summary, and due date.
+- Add a Task: Click the "Add Task" button to open a form where you can create a new task.
+- Complete a Task: Mark tasks as completed by clicking the "Complete" button, which removes the task.
 
-## Running unit tests
+## License
+- This project is licensed under the MIT License - see the LICENSE file for details.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup and Installation
 
-## Running end-to-end tests
+1. **Clone the repository**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
 
-## Further help
+2. **Install dependencies**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   npm install
+
+3. **Serve the application**:
+
+  ```bash
+  ng serve
